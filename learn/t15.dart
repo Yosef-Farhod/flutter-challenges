@@ -2,12 +2,17 @@ void main() {
   Book thesun = Book("thesun", "Ali");
   thesun.printTitle();
 
-
   User ali = User(name: "Ali");
   ali.show_data_user();
 
   User Yosef = User(name: "Yosef", age: 22);
   Yosef.show_data_user();
+
+  Rectangle area1 = Rectangle(10, 20);
+  Rectangle area2 = Rectangle.square(10);
+
+  print(area1.area_calculation());
+  print(area2.area_calculation());
 }
 
 class Book {
@@ -29,5 +34,16 @@ class User {
     if (age != null) {
       print("Age : $age");
     }
+  }
+}
+
+class Rectangle {
+  double width, heigtht;
+
+  Rectangle(this.width, this.heigtht);
+
+  Rectangle.square(double side) : width = side, heigtht = side;
+  double area_calculation() {
+    return width * heigtht;
   }
 }
